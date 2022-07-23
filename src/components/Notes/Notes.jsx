@@ -10,6 +10,11 @@ const Notes = () => {
       <Note />
       <Note />
       <Note />
+      <Note />
+      <Note />
+      <Note />
+      <Note />
+      <Note />
     </div>
   )
 }
