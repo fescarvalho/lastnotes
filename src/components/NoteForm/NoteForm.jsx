@@ -6,14 +6,14 @@ const NoteForm = () => {
   return (
     <form className={styles.noteMenu}>
       <div>
-      <label htmlFor="title">Titulo</label>
+        <label htmlFor="title">Titulo</label>
         <input id="title" type="text" placeholder="Informe um titulo" />
       </div>
       <div>
         <label htmlFor="note">Nota</label>
         <textarea id="note" type="text" rows="10" placeholder="escreva a sua nota"/>
-
       </div>
+      
       <div className={styles.buttons}>
         <button className={styles.cancel}>
           <FaBan className={styles.icon} />

@@ -2,7 +2,7 @@
     display: flex;
     flex-direction: column;
     width: 400px;
-    min-width:400px;
+    min-width: 400px;
     min-height:95vh;
     background: var(--dark-gray);
     padding:20px
@@ -22,6 +22,7 @@
 }
 
 .noteMenu div input{
+  
   border: 0;
   height: 40px;
   margin-bottom: 20px;
@@ -73,4 +74,11 @@
   width:25px;
   height:25px;
   color: #fff
+}
+
+@media(max-width:720px) {
+   .noteMenu{
+     width: 100vw;
+     min-width: 200px;
+   }
 }
