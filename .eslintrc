@@ -3,11 +3,20 @@
         "browser": true,
         "es2021": true
     },
+    "settings": {
+        "react":{
+            "version": "detect"
+        }
+    },
     "extends": [
         "eslint:recommended",
         "plugin:react/recommended",
         "airbnb",
-        "prettier"
+        "plugin:react-hooks/recommended",
+        "plugin:prettier/recommended",
+        
+
+    
     ],
     "parserOptions": {
         "ecmaFeatures": {
@@ -17,16 +26,17 @@
         "sourceType": "module"
     },
     "plugins": [
-        "react"
+        "react",
+        "prettier"
     ],
     "rules": {
         "plugin:react/jsx-runtime": "off",
-        "react/react-in-jsx-scope": "off",
+        "react-in-jsx-scope": "off",
         "import/no-extraneous-dependencies": ["error", {"devDependencies": true}],
         "react/self-closing-comp": ["error", {
         "component": false,
         "html": true,
-        "jsx": false
+        "jsx": true
 }]
     }
 }
