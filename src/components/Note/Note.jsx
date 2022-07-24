@@ -1,20 +1,29 @@
 import { useState } from "react";
+import { useNoteForm } from "../../context/NoteFormContext";
+import { useHighLight } from "../../context/HighLightContext";
 
-import styles from "./Note.module.css";
+import "./Note.css";
 
 function Note({ id, title, description }) {
-  const [highLight, setHighLight] = useState(false);
+  const { HighLight, setHighLight } = useHighLight();
+  const { setVisibleForm } = useNoteForm();
 
   return (
     <div
-      className={`${styles.note} ${highLight ? styles.highlight : ""}`}
+      className={`note ${HighLight === id && " highLight"}`}
       onClick={() => {
-        setHighLight(!highLight);
+        if (HighLight === id) {
+          setHighLight(false);
+          setVisibleForm(false);
+        } else {
+          setHighLight(id);
+          setVisibleForm(true);
+        }
       }}
     >
-      <h2 className={styles.title}>{title}</h2>
+      <h2 className="title">{title}</h2>
       <hr />
-      <p className={styles.description}>{description}</p>
+      <p className="description">{description}</p>
     </div>
   );
 }

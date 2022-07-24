@@ -1,15 +1,17 @@
-import React from 'react'
-import NoteForm from '../NoteForm/NoteForm'
-import styles from './NotesAreas.module.css'
+import React from "react";
+import { useNoteForm } from "../../context/NoteFormContext";
+import NoteForm from "../NoteForm/NoteForm";
+import styles from "./NotesAreas.module.css";
 
+const NotesArea = ({ children }) => {
+  const { visibleForm } = useNoteForm();
 
-const NotesArea = ({children}) => {
   return (
     <article className={styles.notesArea}>
       {children}
-      <NoteForm />
+      {visibleForm && <NoteForm />}
     </article>
-  )
-}
+  );
+};
 
-export default NotesArea
+export default NotesArea;

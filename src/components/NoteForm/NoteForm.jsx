@@ -1,13 +1,19 @@
 import { useState } from "react";
 import { FaBan, FaCheck } from "react-icons/fa";
+import { useNoteForm } from "../../context/NoteFormContext";
 import { useNoteList } from "../../context/NoteListContext";
 import styles from "./NoteForm.module.css";
 
 const NoteForm = () => {
-  const [title, setTitle] = useState("");
-  const [description, setDescription] = useState("");
-
   const { noteList, setNoteList } = useNoteList();
+  const {
+    title,
+    setTitle,
+    description,
+    setDescription,
+    visibleForm,
+    setVisibleForm,
+  } = useNoteForm();
 
   function titleHander(e) {
     setTitle(e.target.value);
@@ -19,22 +25,23 @@ const NoteForm = () => {
 
   function submitHandler(e) {
     e.preventDefault();
-    if (title || description === null) {
-      setError("Campo não pode ficar em branco");
-    } else {
-      setNoteList([
-        ...noteList,
-        {
-          id: String(Math.floor(Math.random() * 1000)),
-          title,
-          description,
-        },
-      ]);
-      setDescription("");
-      setTitle("");
-    }
+
+    setNoteList([
+      ...noteList,
+      {
+        id: String(Math.floor(Math.random() * 1000)),
+        title,
+        description,
+      },
+    ]);
+    setDescription("");
+    setTitle("");
   }
 
+  function cancelHandler(e) {
+    e.preventDefault();
+    setVisibleForm(false);
+  }
   return (
     <form className={styles.noteMenu}>
       <div>
@@ -60,7 +67,7 @@ const NoteForm = () => {
       </div>
 
       <div className={styles.buttons}>
-        <button className={styles.cancel}>
+        <button className={styles.cancel} onClick={cancelHandler}>
           <FaBan className={styles.icon} />
         </button>
         <button

@@ -6,22 +6,25 @@ import NoteForm from "./components/NoteForm/NoteForm";
 import Notes from "./components/Notes/Notes";
 import NotesArea from "./components/NotesArea/NotesArea";
 import HighLighContext from "./context/HighLightContext";
+import NoteFormProvider from "./context/NoteFormContext";
 import NoteListProvider from "./context/NoteListContext";
 
 function App() {
   return (
     <>
-      <HighLighContext>
+      <NoteFormProvider>
         <NoteListProvider>
-          <Header>
-            <Logo />
-            <Actions />
-          </Header>
-          <NotesArea>
-            <Notes />
-          </NotesArea>
+          <HighLighContext>
+            <Header>
+              <Logo />
+              <Actions />
+            </Header>
+            <NotesArea>
+              <Notes />
+            </NotesArea>
+          </HighLighContext>
         </NoteListProvider>
-      </HighLighContext>
+      </NoteFormProvider>
     </>
   );
 }
