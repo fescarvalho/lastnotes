@@ -1,4 +1,3 @@
-
 .actions {
   display: inline-flex;
   flex-wrap: wrap;
@@ -8,9 +7,7 @@
 .icon {
   width: 25px;
   height: 25px;
-
   color: #fff;
-
 }
 
 .actions > button {
@@ -23,4 +20,10 @@
 .actions .disabled {
   opacity: 0.5;
   cursor: not-allowed;
+}
+
+@media (max-width: 400px) {
+  .icon {
+    width: 15px;
+  }
 }

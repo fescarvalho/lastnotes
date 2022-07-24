@@ -1,22 +1,22 @@
 :root {
-  --header-background: #2f2f2f;
-  --note-background: #c4c4c4;
-  --dark-gray: #474747
+  --header-background: #0a0c0d;
+  --note-background: #98c3a1;
+  --dark-gray: #213635;
 }
 
 /* Reset */
 
 * {
-  margin:0;
-  padding:0;
+  margin: 0;
+  padding: 0;
   box-sizing: border-box;
-  font-family: 'Roboto', sans-serif;
+  font-family: "Poppins", sans-serif;
   text-decoration: none;
   -webkit-font-smoothing: antialiased;
   -mox-osx-font-smoothing: grayscale;
-
 }
 
-ul,li {
+ul,
+li {
   list-style: none;
 }

@@ -1,17 +1,41 @@
 .note {
   display: flex;
+  justify-content: center;
   flex-direction: column;
   align-items: center;
-
+  position: relative;
   width: 280px;
-  height:280px;
+  height: 280px;
   padding: 15px;
-
-  background: var(--note-background)
-
+  border-radius: 4px;
+  background: #c0d8d8;
 }
+
+.note::before {
+  content: "";
+  position: absolute;
+
+  height: 290px;
+  width: 290px;
+  border-radius: ;
+  border-radius: 4px;
+  background: linear-gradient(#002e34, #348e91);
+  z-index: -1;
+  animation: animate 3s linear infinite;
+}
+
+@keyframes animate {
+  0% {
+    filter: hue-rotate(0deg) brightness(100%) blur(10px);
+  }
+
+  100% {
+    filter: hue-rotate(36deg) brightness(100%) blur(10px);
+  }
+}
+
 .note.highlight {
-  border: 2px solid var(--dark-gray)
+  border: 2px solid var(--dark-gray);
 }
 
 .note hr {
@@ -19,7 +43,7 @@
   width: 80%;
   border-bottom: none;
 
-  margin: 10px
+  margin: 10px;
 }
 
 .note .title {
@@ -30,7 +54,6 @@
   overflow-x: scroll;
   overflow-y: hidden;
   white-space: nowrap;
-
 }
 
 .note .description {
@@ -39,25 +62,21 @@
   overflow-x: hidden;
   overflow-y: scroll;
   text-overflow: ellipsis;
-
 }
 
 .note .title::-webkit-scrollbar {
   display: none;
-  
 }
 
 .note .description::-webkit-scrollbar {
-  width:5px;
-
+  width: 5px;
 }
 .note .description::-webkit-scrollbar-track {
-background: transparent;
+  background: transparent;
 }
 .note .description::-webkit-scrollbar-thumb {
-background: transparent;
+  background: transparent;
 }
 .note .description:hover::-webkit-scrollbar-thumb {
-background: #888;
+  background: #888;
 }
-
