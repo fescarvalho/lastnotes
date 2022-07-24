@@ -4,6 +4,7 @@ import styles from "./Note.module.css";
 
 function Note({ id, title, description }) {
   const [highLight, setHighLight] = useState(false);
+
   return (
     <div
       className={`${styles.note} ${highLight ? styles.highlight : ""}`}

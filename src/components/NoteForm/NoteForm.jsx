@@ -6,6 +6,7 @@ import styles from "./NoteForm.module.css";
 const NoteForm = () => {
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
+
   const { noteList, setNoteList } = useNoteList();
 
   function titleHander(e) {
@@ -18,16 +19,20 @@ const NoteForm = () => {
 
   function submitHandler(e) {
     e.preventDefault();
-    setNoteList([
-      ...noteList,
-      {
-        id: String(Math.floor(Math.random() * 1000)),
-        title,
-        description,
-      },
-    ]);
-    setDescription("");
-    setTitle("");
+    if (title || description === null) {
+      setError("Campo não pode ficar em branco");
+    } else {
+      setNoteList([
+        ...noteList,
+        {
+          id: String(Math.floor(Math.random() * 1000)),
+          title,
+          description,
+        },
+      ]);
+      setDescription("");
+      setTitle("");
+    }
   }
 
   return (
