@@ -1,7 +1,6 @@
 import Actions from "./components/Actions/Actions";
 import Header from "./components/Header/Header";
-import Logo from "./components/Logo/logo";
-import NoteForm from "./components/NoteForm/NoteForm";
+import Logo from "./components/Logo/Logo";
 
 import Notes from "./components/Notes/Notes";
 import NotesArea from "./components/NotesArea/NotesArea";
