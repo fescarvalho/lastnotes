@@ -42,7 +42,7 @@
   align-self: center;
   width: 80%;
   border-bottom: none;
-
+  border-color: #c4ffeb;
   margin: 10px;
 }
 
@@ -61,7 +61,7 @@
   height: 100%;
   overflow-x: hidden;
   overflow-y: scroll;
-  text-overflow: ellipsis;
+  overflow-wrap: break-word;
 }
 
 .note .title::-webkit-scrollbar {
@@ -78,5 +78,6 @@
   background: transparent;
 }
 .note .description:hover::-webkit-scrollbar-thumb {
-  background: #888;
+  background: var(--dark-gray);
+  border-radius: 5px;
 }

@@ -36,6 +36,8 @@
   font-size: 16px;
   padding: 5px;
   border: none;
+
+  font-weight: bold;
 }
 
 .noteMenu div textarea::-webkit-scrollbar {
@@ -48,7 +50,7 @@
   background: transparent;
 }
 .noteMenu div textarea:hover::-webkit-scrollbar-thumb {
-  background: #888;
+  background: var(--dark-gray);
 }
 
 .buttons {

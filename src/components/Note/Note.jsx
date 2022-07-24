@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { useNoteForm } from "../../context/NoteFormContext";
 import { useHighLight } from "../../context/HighLightContext";
 
